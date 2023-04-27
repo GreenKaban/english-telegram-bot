@@ -1,4 +1,5 @@
-from typing import Set, Optional, Iterable, Dict
+from datetime import datetime
+from typing import Set, Optional, Iterable, Dict, List
 
 from sqlalchemy import func, create_engine
 from sqlalchemy.orm import sessionmaker
@@ -34,13 +35,17 @@ class Adapter(metaclass=Singleton):
     def get_words(self, lesson_name: str) -> Dict[str, str]:
         session = self.Session()
         query = session.query(WordsTable).filter(WordsTable.lesson_name == lesson_name).all()
-        words = {word.word: word.translations for word in query}
+        words = {word.word: word.translation for word in query}
 
         return words
 
     def exists_lesson(self, lesson_name) -> bool:
         session = self.Session()
         return session.query(LessonsTable.name).filter(LessonsTable.name == lesson_name).first() is not None
+
+    def list_lesson(self):
+        session = self.Session()
+        return session.query(LessonsTable.name, LessonsTable.created_date).all()
 
         # def delete_plan(self, plan_id: int):
     #     session = self.Session()

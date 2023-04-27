@@ -16,8 +16,9 @@ def main():
 
     bot.register_message_handler(comm.add_lesson, commands=['add_lesson'])
     bot.register_message_handler(comm.add_word, commands=['add_word'])
+    bot.register_message_handler(comm.list_lesson, commands=['list_lesson'])
+    bot.register_message_handler(comm.start_lesson, commands=['start_lesson'])
     bot.register_message_handler(comm.text_command, content_types=['text'])
-    # bot.register_message_handler(planer.add_plan, commands=['plan'])
     # bot.register_message_handler(planer.update_plan, commands=['result', 'add', 'delete', 'comment', 'order', 'fail'])
     # bot.register_message_handler(planer.authentication_user, commands=['saveme'])
     # bot.register_message_handler(planer.set_name, commands=['name'])
