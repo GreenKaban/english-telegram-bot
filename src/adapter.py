@@ -47,31 +47,3 @@ class Adapter(metaclass=Singleton):
         session = self.Session()
         return session.query(LessonsTable.name, LessonsTable.created_date).all()
 
-        # def delete_plan(self, plan_id: int):
-    #     session = self.Session()
-    #     item = session.query(PlanModel).get(plan_id)
-    #     session.delete(item)
-    #     session.commit()
-    #
-    # def add_plan(self, plan: PlanModel, plan_id: Optional[int] = None) -> int:
-    #     session = self.Session()
-    #     if plan_id is not None:
-    #         plan.id = plan_id
-    #     session.add(plan)
-    #     session.commit()
-    #     session.refresh(plan)
-    #     return plan.id
-    #
-    # def update_name(self, user_id: int, name: str):
-    #     session = self.Session()
-    #     user = session.query(UserModel).get(user_id)
-    #     user.name = name
-    #     session.add(user)
-    #     session.commit()
-    #
-
-    #
-    # def get_name(self, user_id: int) -> str:
-    #     session = self.Session()
-    #     user = session.query(UserModel).get(user_id)
-    #     return user.name
