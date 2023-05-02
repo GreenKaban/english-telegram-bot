@@ -11,7 +11,9 @@ class Lesson:
         self.words: Dict[str, str] = {} if words is None else words
 
         self.active_words = list(self.words.keys())
-        self.current_word = random.choice(self.active_words)
+        self.current_word = None
+        if len(self.active_words) > 0:
+            self.current_word = random.choice(self.active_words)
 
     def add_word(self, word: str, translation: str):
         self.words[word] = translation
@@ -36,4 +38,3 @@ class Lesson:
                 return None, None
             self.current_word = random.choice(self.active_words)
         return self.current_word, self.words[self.current_word]
-
