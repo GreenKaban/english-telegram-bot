@@ -1,7 +1,6 @@
-from datetime import datetime
-from typing import Set, Optional, Iterable, Dict, List
+from typing import Dict
 
-from sqlalchemy import func, create_engine
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from src.database import WordsTable, LessonsTable

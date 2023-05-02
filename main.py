@@ -12,7 +12,6 @@ def main():
 
     bot = telebot.TeleBot(args.token, parse_mode=None)
     comm = Commands(bot)
-    # comm.load_from_db()
 
     bot.register_message_handler(comm.add_lesson, commands=['add_lesson'])
     bot.register_message_handler(comm.add_word, commands=['add_word'])
